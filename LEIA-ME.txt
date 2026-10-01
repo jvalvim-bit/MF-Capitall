@@ -1,0 +1,35 @@
+MF CAPITAL — SITE DE COMPRA E VENDA DE PRECATÓRIOS
+==================================================
+
+Para abrir: dois cliques em index.html.
+
+
+IMAGENS QUE FALTAM (os espaços estão em branco no site)
+-------------------------------------------------------
+Salve cada imagem dentro da pasta "imagens" com exatamente estes nomes.
+Pode ser .webp, .jpg ou .png: o site procura nessa ordem e mostra
+sozinho, com animação, assim que o arquivo existir. Basta dar F5.
+
+  imagens/entenda      proporção 4:5 (retrato)    sugestão 1200 x 1500   seção "01 — Entenda"
+  imagens/vantagens    proporção 21:9 (panorama)  sugestão 2100 x 900    seção "03 — Por que vender"
+  imagens/escritura    proporção 4:3              sugestão 1200 x 900    seção "04 — Passo a passo" (só no computador)
+  imagens/investir     proporção 4:5 (retrato)    sugestão 1200 x 1500   seção "07 — Para investidores"
+  imagens/para-quem    proporção 4:5 (retrato)    sugestão 1200 x 1500   seção "08 — Para quem"
+
+  imagens/hero.webp    já está pronta (foto principal, gerada por IA).
+
+
+LOGOTIPO SEM FUNDO
+------------------
+  imagens/logo-mf-capital.png         cores originais, para fundo claro
+  imagens/logo-mf-capital-claro.png   azul vira branco, para fundo escuro
+  imagens/mf-simbolo.png              só o símbolo MF
+  imagens/mf-simbolo-claro.png        só o símbolo MF, versão clara
+
+
+FORMULÁRIO DE AVALIAÇÃO
+-----------------------
+O site é estático (não tem servidor). Ao clicar em "Solicitar avaliação",
+o visitante vê a confirmação e escolhe como enviar a mensagem já
+preenchida para mf.negociosecapital@gmail.com: pelo Gmail, pelo app de
+e-mail do aparelho ou copiando o texto. Nada é enviado sozinho.

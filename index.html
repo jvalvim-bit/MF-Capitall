@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#FFFFFF">
+<title>MF Capital — Compra e venda de precatórios</title>
+<meta name="description" content="A MF Capital avalia e adquire precatórios federais, estaduais e municipais com análise jurídica completa, escritura pública e pagamento na assinatura. Simule a venda e solicite uma avaliação.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MF Capital — Compra e venda de precatórios">
+<meta property="og:description" content="Transforme anos de espera em liquidez imediata, com segurança jurídica do início ao fim.">
+<meta property="og:image" content="imagens/hero.webp">
+<link rel="icon" type="image/png" href="imagens/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="imagens/hero.webp">
+<link rel="stylesheet" href="css/estilo.css?v=5">
+<script>
+  // Liga as animações só quando há JavaScript; sem ele, todo o conteúdo fica visível.
+  document.documentElement.classList.replace('sem-js', 'js');
+  document.documentElement.classList.add('carregando');
+</script>
+</head>
+<body>
+
+<!-- Ícones (traço 1.6, grade 24) -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-seta-baixo" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></symbol>
+  <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.8-3.3 8.3-8 9.7-4.7-1.4-8-4.9-8-9.7V6l8-3z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-balanca" viewBox="0 0 24 24"><path d="M12 4v16M7.5 20h9M5 7.5h14M12 4.5l-1 3h2zM5 7.5L2.5 13a2.5 2.5 0 0 0 5 0zM19 7.5L16.5 13a2.5 2.5 0 0 0 5 0z"/></symbol>
+  <symbol id="i-documento" viewBox="0 0 24 24"><path d="M6.5 3h8l4 4v13a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4.5h4.5M8.5 12h7M8.5 15.5h7M8.5 8.5h3"/></symbol>
+  <symbol id="i-caneta" viewBox="0 0 24 24"><path d="M15.5 4.5l4 4L9 19l-5 1 1-5z"/><path d="M13.5 6.5l4 4"/></symbol>
+  <symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></symbol>
+  <symbol id="i-carteira" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16" height="11" rx="2.5"/><path d="M16 13.5h1.5"/></symbol>
+  <symbol id="i-grafico" viewBox="0 0 24 24"><path d="M4 19.5h16M6.5 16l4-4.5 3 2.5L18.5 8"/><path d="M15 8h3.5v3.5"/></symbol>
+  <symbol id="i-pessoas" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5a6 6 0 0 1 12 0M16 5.6a3.2 3.2 0 0 1 0 6M21 19.5a6 6 0 0 0-3.6-5.5"/></symbol>
+  <symbol id="i-predio" viewBox="0 0 24 24"><path d="M3.5 20.5h17M5 20.5V10M9.5 20.5V10M14.5 20.5V10M19 20.5V10M3.5 10L12 4l8.5 6z"/></symbol>
+  <symbol id="i-maleta" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="2.5"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M3.5 12.5h17"/></symbol>
+  <symbol id="i-chave" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 7l2.5 2.5M14 9l2 2"/></symbol>
+  <symbol id="i-familia" viewBox="0 0 24 24"><circle cx="7.5" cy="7" r="2.5"/><circle cx="16.5" cy="7" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M3.5 19.5v-3a4 4 0 0 1 8 0M12.5 16.5a4 4 0 0 1 8 0v3M9.5 20.5a2.5 2.5 0 0 1 5 0"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-seta-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-gmail" viewBox="52 42 88 66"><path fill="#4285F4" stroke="none" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/><path fill="#34A853" stroke="none" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/><path fill="#FBBC04" stroke="none" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/><path fill="#EA4335" stroke="none" d="M72 74V48l24 18 24-18v26L96 92"/><path fill="#C5221F" stroke="none" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/></symbol>
+  <symbol id="i-envio" viewBox="0 0 24 24"><path d="M20.5 3.5L10 14M20.5 3.5L14 20.5l-4-6.5-6.5-4z"/></symbol>
+</svg>
+
+<!-- Abertura -->
+<div class="loader" aria-hidden="true">
+  <div class="loader-cortina"></div>
+  <div class="loader-centro">
+    <div class="loader-marca"><img src="imagens/mf-simbolo.png" alt="" width="308" height="224"></div>
+    <div class="loader-linha"><span></span></div>
+    <div class="loader-rodape"><span class="loader-nome">MF Capital</span><span class="loader-num">0</span></div>
+  </div>
+</div>
+
+<div class="progresso" aria-hidden="true"><span></span></div>
+<div class="cursor oculto" aria-hidden="true"><span class="cursor-anel"><em></em></span><span class="cursor-ponto"></span></div>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Cabeçalho -->
+<header class="topo" data-tema="claro">
+  <div class="container topo-in">
+    <a class="topo-logo" href="#inicio" aria-label="MF Capital — início">
+      <img class="logo-claro" src="imagens/logo-mf-capital-claro.png" alt="MF Capital — compra e venda de precatórios" width="1062" height="224">
+      <img class="logo-escuro" src="imagens/logo-mf-capital.png" alt="" aria-hidden="true" width="1062" height="224">
+    </a>
+    <nav class="topo-nav" aria-label="Navegação principal">
+      <a href="#entenda">Entenda</a>
+      <a href="#passo-a-passo">Passo a passo</a>
+      <a href="#base-legal">Base legal</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#investir">Investir</a>
+      <a href="#duvidas">Dúvidas</a>
+      <span class="topo-nav-marca" aria-hidden="true"></span>
+    </nav>
+    <a class="btn btn-azul btn-p topo-cta" href="#contato" data-magnetico><span class="btn-txt">Solicitar avaliação</span><svg class="btn-ic"><use href="#i-seta"/></svg></a>
+    <button class="topo-menu" type="button" aria-expanded="false" aria-controls="menu-movel" aria-label="Abrir menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu-movel" id="menu-movel" hidden>
+  <nav aria-label="Menu">
+    <a href="#entenda"><small>01</small>Entenda</a>
+    <a href="#passo-a-passo"><small>02</small>Passo a passo</a>
+    <a href="#base-legal"><small>03</small>Base legal</a>
+    <a href="#simulador"><small>04</small>Simulador</a>
+    <a href="#investir"><small>05</small>Investir</a>
+    <a href="#duvidas"><small>06</small>Dúvidas</a>
+    <a href="#contato"><small>07</small>Contato</a>
+  </nav>
+  <a class="menu-movel-email" href="mailto:mf.negociosecapital@gmail.com">mf.negociosecapital@gmail.com</a>
+</div>
+
+<main id="conteudo">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" data-tema="claro">
+  <div class="hero-nevoa" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="container hero-grade">
+    <div class="hero-texto">
+      <p class="olho hero-olho"><span class="olho-traco"></span>Compra e venda de precatórios</p>
+      <h1 class="hero-titulo" data-split>Transforme anos de espera em <em>liquidez imediata</em>.</h1>
+      <p class="hero-sub">A MF Capital avalia e adquire precatórios federais, estaduais e municipais pela cessão de crédito prevista na Constituição — com análise jurídica completa, escritura pública e pagamento na assinatura.</p>
+      <div class="hero-acoes">
+        <a class="btn btn-azul" href="#simulador" data-magnetico><span class="btn-txt">Simular minha venda</span><svg class="btn-ic"><use href="#i-seta"/></svg></a>
+        <a class="btn btn-contorno" href="#contato" data-magnetico><span class="btn-txt">Solicitar avaliação</span></a>
+      </div>
+      <ul class="hero-notas">
+        <li><svg><use href="#i-check"/></svg>Escritura pública</li>
+        <li><svg><use href="#i-check"/></svg>Registro no tribunal</li>
+        <li><svg><use href="#i-check"/></svg>Proposta por escrito</li>
+      </ul>
+    </div>
+
+    <div class="hero-palco">
+      <figure class="hero-moldura" data-profundidade="10">
+        <div class="hero-moldura-in" data-tilt>
+          <div class="hero-foto-wrap" data-parallax="0.07"><img class="hero-foto" src="imagens/hero.webp" alt="Colunata modernista ao entardecer, refletida num espelho d'água" width="1536" height="864" fetchpriority="high"></div>
+        </div>
+      </figure>
+      <aside class="hero-cartao" data-profundidade="26" aria-label="Fundamento constitucional">
+        <span class="selo"><svg><use href="#i-balanca"/></svg>Constituição Federal</span>
+        <blockquote>“O credor poderá ceder, total ou parcialmente, seus créditos em precatórios a terceiros, independentemente da concordância do devedor.”</blockquote>
+        <p class="hero-cartao-fonte">Art. 100, § 13</p>
+      </aside>
+      <div class="hero-chip" data-profundidade="38"><span><svg><use href="#i-escudo"/></svg></span><div><strong>Pagamento na assinatura</strong><small>da escritura, em cartório</small></div></div>
+    </div>
+  </div>
+
+  <div class="container hero-fatos">
+    <div class="fato">
+      <strong>1º fev.</strong>
+      <span>data-limite para o precatório entrar no orçamento do ano seguinte <em>(CF, art. 100, § 5º)</em></span>
+    </div>
+    <div class="fato">
+      <strong>até <span data-contar="40">40</span>%</strong>
+      <span>de redução que a própria Constituição admite em acordos diretos com o ente público <em>(art. 100, § 20)</em></span>
+    </div>
+    <div class="fato">
+      <strong><span data-contar="7">7</span> etapas</strong>
+      <span>do primeiro contato ao registro da cessão no tribunal, todas documentadas</span>
+    </div>
+  </div>
+
+  <a class="hero-rolar" href="#entenda" aria-label="Rolar para o conteúdo"><span class="hero-rolar-mouse"><i></i></span><span>Role para conhecer</span></a>
+</section>
+
+<!-- ============ ENTENDA ============ -->
+<section class="secao branco" id="entenda" data-tema="claro">
+  <div class="container grade-2">
+    <div>
+      <p class="olho" data-reveal><span class="olho-traco"></span>01 — Entenda</p>
+      <h2 class="titulo" data-split>Uma dívida do poder público, <em>reconhecida pela Justiça</em>.</h2>
+      <p class="lead" data-reveal>Precatório é a ordem de pagamento que o Presidente do Tribunal expede para que a União, um Estado, o Distrito Federal, um Município — ou suas autarquias e fundações — pague o valor a que foi condenado em decisão judicial definitiva, aquela contra a qual não cabe mais recurso.</p>
+      <p data-reveal>Como todo gasto público depende de orçamento, o pagamento não é imediato. Os precatórios entram numa fila organizada pela <strong>ordem cronológica de apresentação</strong>, e a Constituição proíbe escolher casos ou pessoas para pagar primeiro <span class="cita">CF, art. 100, caput</span>.</p>
+    </div>
+    <!-- Espaço para imagem: imagens/entenda.webp (ou .jpg/.png) — proporção 4:5, ~1200×1500 -->
+    <figure class="foto foto-retrato" data-foto="imagens/entenda" data-reveal="clip"><div class="foto-moldura" data-parallax="0.06"></div></figure>
+  </div>
+
+  <div class="container cartoes-4">
+    <article class="cartao" data-reveal style="--d:0">
+      <span class="cartao-ic"><svg><use href="#i-familia"/></svg></span>
+      <h3>Natureza alimentar</h3>
+      <p>Créditos ligados à relação de trabalho ou previdenciária — salários, aposentadorias, pensões, benefícios — e indenizações por morte ou invalidez. São pagos com preferência sobre os demais.</p>
+      <span class="cita">CF, art. 100, § 1º</span>
+    </article>
+    <article class="cartao" data-reveal style="--d:1">
+      <span class="cartao-ic"><svg><use href="#i-predio"/></svg></span>
+      <h3>Natureza comum</h3>
+      <p>Desapropriações, contratos com o poder público, devolução de tributos e outras condenações. Seguem a ordem cronológica geral, depois dos alimentares.</p>
+      <span class="cita">CF, art. 100, caput</span>
+    </article>
+    <article class="cartao" data-reveal style="--d:2">
+      <span class="cartao-ic"><svg><use href="#i-relogio"/></svg></span>
+      <h3>Precatório ou RPV?</h3>
+      <p>Condenações de pequeno valor viram RPV, com pagamento rápido — na esfera federal, até 60 salários mínimos, em até 60 dias. Acima do limite, o caminho é o precatório.</p>
+      <span class="cita">Lei 10.259/2001, art. 17</span>
+    </article>
+    <article class="cartao" data-reveal style="--d:3">
+      <span class="cartao-ic"><svg><use href="#i-escudo"/></svg></span>
+      <h3>Superpreferência</h3>
+      <p>Credores alimentares com 60 anos ou mais, doença grave ou deficiência recebem antes uma parcela de até três vezes o limite da RPV. O restante segue a fila.</p>
+      <span class="cita">CF, art. 100, § 2º</span>
+    </article>
+  </div>
+</section>
+
+<!-- ============ JORNADA ============ -->
+<section class="secao suave" id="jornada" data-tema="claro">
+  <div class="container">
+    <div class="cabeca-secao">
+      <p class="olho" data-reveal><span class="olho-traco"></span>02 — A jornada</p>
+      <h2 class="titulo" data-split>Do trânsito em julgado ao pagamento: <em>por que demora</em>.</h2>
+      <p class="lead" data-reveal>O caminho de um precatório passa pelo Judiciário, pelo orçamento do ente devedor e pela fila. Entender cada parada é o primeiro passo para decidir entre esperar ou antecipar.</p>
+    </div>
+
+    <ol class="linha-tempo">
+      <li class="lt-trilho" aria-hidden="true"><span></span></li>
+      <li class="lt-item" data-reveal>
+        <span class="lt-no">1</span>
+        <div><h3>Condenação definitiva</h3><p>A ação contra o poder público termina e a decisão transita em julgado: não cabe mais recurso sobre o direito.</p></div>
+      </li>
+      <li class="lt-item" data-reveal>
+        <span class="lt-no">2</span>
+        <div><h3>Cálculo e cumprimento de sentença</h3><p>O valor é apurado e pode ser impugnado pelo ente devedor. Só depois de definido o montante é expedido o ofício requisitório.</p></div>
+      </li>
+      <li class="lt-item" data-reveal>
+        <span class="lt-no">3</span>
+        <div><h3>Apresentação ao tribunal</h3><p>O juízo envia o requisitório ao Presidente do Tribunal, que expede o precatório e o inscreve na ordem cronológica.</p></div>
+      </li>
+      <li class="lt-item" data-reveal>
+        <span class="lt-no">4</span>
+        <div><h3>Inclusão no orçamento</h3><p>Precatórios apresentados até <strong>1º de fevereiro</strong> devem entrar no orçamento do ano seguinte e ser pagos até o fim desse exercício.</p><span class="cita">CF, art. 100, § 5º (EC 136/2025)</span></div>
+      </li>
+      <li class="lt-item" data-reveal>
+        <span class="lt-no">5</span>
+        <div><h3>Limites de estados e municípios</h3><p>Desde a EC 136/2025, estados, DF e municípios pagam precatórios dentro de limites anuais de 1% a 5% da receita corrente líquida, conforme o tamanho do estoque em atraso. Na prática, a fila pode se alongar.</p><span class="cita">CF, art. 100, § 23</span></div>
+      </li>
+      <li class="lt-item" data-reveal>
+        <span class="lt-no">6</span>
+        <div><h3>Pagamento e levantamento</h3><p>O valor é depositado e liberado ao credor com correção e com as retenções legais aplicáveis.</p></div>
+      </li>
+    </ol>
+
+    <div class="exemplo" data-reveal>
+      <span class="exemplo-ic"><svg><use href="#i-relogio"/></svg></span>
+      <p><strong>Na prática:</strong> um precatório apresentado em 10 de fevereiro de 2026 perde a data-limite daquele ano. Ele só entra no orçamento de 2028 — e o pagamento pode acontecer até 31 de dezembro de 2028, quase três anos depois.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VANTAGENS ============ -->
+<section class="secao branco" id="vantagens" data-tema="claro">
+  <div class="container">
+    <div class="cabeca-secao estreita">
+      <p class="olho" data-reveal><span class="olho-traco"></span>03 — Por que vender</p>
+      <h2 class="titulo" data-split>O tempo tem custo. <em>Você decide</em> quem paga por ele.</h2>
+    </div>
+
+    <div class="grade-vantagens">
+      <article class="vantagem" data-tilt data-reveal style="--d:0">
+        <span class="vantagem-num">01</span>
+        <svg class="vantagem-ic"><use href="#i-carteira"/></svg>
+        <h3>Liquidez agora</h3>
+        <p>O valor que levaria anos para chegar entra na sua conta na assinatura da escritura — para quitar dívidas, investir ou cuidar da família.</p>
+      </article>
+      <article class="vantagem" data-tilt data-reveal style="--d:1">
+        <span class="vantagem-num">02</span>
+        <svg class="vantagem-ic"><use href="#i-grafico"/></svg>
+        <h3>Fim da incerteza</h3>
+        <p>As regras de pagamento mudam com frequência: as Emendas 62/2009, 94/2016, 99/2017, 109/2021, 113/2021, 114/2021 e 136/2025 alteraram prazos, índices e limites.</p>
+      </article>
+      <article class="vantagem" data-tilt data-reveal style="--d:2">
+        <span class="vantagem-num">03</span>
+        <svg class="vantagem-ic"><use href="#i-escudo"/></svg>
+        <h3>Segurança jurídica</h3>
+        <p>Cessão autorizada pela Constituição, formalizada em escritura pública e registrada no tribunal. Nada de contrato de gaveta.</p>
+      </article>
+      <article class="vantagem" data-tilt data-reveal style="--d:3">
+        <span class="vantagem-num">04</span>
+        <svg class="vantagem-ic"><use href="#i-relogio"/></svg>
+        <h3>O risco do atraso muda de lado</h3>
+        <p>Depois da venda, a espera e o risco de prazo passam a ser de quem comprou. Você não devolve nada se o pagamento público atrasar.</p>
+      </article>
+    </div>
+
+    <!-- Espaço para imagem: imagens/vantagens.webp (ou .jpg/.png) — proporção 21:9, ~2100×900 -->
+    <figure class="foto foto-panorama" data-foto="imagens/vantagens" data-reveal="clip"><div class="foto-moldura" data-parallax="0.08"></div></figure>
+
+    <p class="nota-honesta" data-reveal><svg><use href="#i-balanca"/></svg><span>Vender não é obrigação. Quem pode esperar recebe o valor integral atualizado no futuro. O nosso papel é colocar os números lado a lado para você decidir com tranquilidade.</span></p>
+  </div>
+</section>
+
+<!-- ============ PASSO A PASSO ============ -->
+<section class="secao suave" id="passo-a-passo" data-tema="claro">
+  <div class="container">
+    <div class="cabeca-secao">
+      <p class="olho" data-reveal><span class="olho-traco"></span>04 — Passo a passo</p>
+      <h2 class="titulo" data-split>Sete etapas, <em>nenhuma surpresa</em>.</h2>
+      <p class="lead" data-reveal>Do primeiro contato ao registro no tribunal, cada etapa tem fundamento legal e fica documentada. Você acompanha tudo e só assina quando estiver seguro.</p>
+    </div>
+
+    <div class="passos">
+      <aside class="passos-painel" aria-hidden="true">
+        <div class="passos-painel-in">
+          <div class="passos-num"><span class="passos-num-roda"><b>01</b><b>02</b><b>03</b><b>04</b><b>05</b><b>06</b><b>07</b></span></div>
+          <p class="passos-de">de 07</p>
+          <div class="passos-barra"><span></span></div>
+          <p class="passos-base"><small>Base legal</small><span>Atendimento inicial</span></p>
+          <!-- Espaço para imagem: imagens/escritura.webp (ou .jpg/.png) — proporção 4:3, ~1200×900 -->
+          <figure class="foto foto-passos" data-foto="imagens/escritura"><div class="foto-moldura"></div></figure>
+        </div>
+      </aside>
+
+      <ol class="passos-lista">
+        <li class="passo" data-base="Atendimento inicial">
+          <span class="passo-tag">Etapa 01</span>
+          <h3>Primeiro contato</h3>
+          <p>Você nos envia o número do processo ou do precatório, o tribunal e o ente devedor. Com isso já é possível começar. Se não tiver esses dados à mão, ajudamos a localizar.</p>
+          <ul class="passo-docs"><li>Número do processo ou do precatório</li><li>Tribunal e ente devedor</li></ul>
+        </li>
+        <li class="passo" data-base="CPC, arts. 792 e 860 · CF, art. 100, § 9º · Lei 8.906/1994, art. 22, § 4º">
+          <span class="passo-tag">Etapa 02</span>
+          <h3>Análise jurídica completa</h3>
+          <p>Consultamos os autos e o ofício requisitório: titularidade, valor atualizado, natureza do crédito, posição na fila e ano orçamentário. Verificamos honorários contratuais destacados, penhoras no rosto dos autos, cessões anteriores e débitos em dívida ativa que possam ser abatidos.</p>
+          <p class="passo-lei">A cessão só alcança o <strong>valor disponível</strong>: o líquido depois de contribuições, FGTS, honorários, penhoras, parcela superpreferencial já paga, compensações e cessões anteriores <span class="cita">Res. CNJ 303/2019, art. 42, § 2º</span></p>
+        </li>
+        <li class="passo" data-base="Código Civil, art. 286 · CF, art. 100, § 13">
+          <span class="passo-tag">Etapa 03</span>
+          <h3>Proposta por escrito</h3>
+          <p>Você recebe o valor oferecido, a forma de pagamento e exatamente o que está sendo cedido — o crédito inteiro ou só uma parte. Sem compromisso: a decisão é sua, no seu tempo.</p>
+        </li>
+        <li class="passo" data-base="CPC, art. 792 · CPC, art. 619, I">
+          <span class="passo-tag">Etapa 04</span>
+          <h3>Documentos e certidões</h3>
+          <p>Documentos pessoais, comprovante de endereço e estado civil. Quando o titular faleceu, entram os documentos do inventário ou a autorização judicial. As certidões afastam o risco de a venda ser questionada como fraude à execução.</p>
+          <ul class="passo-docs"><li>RG e CPF</li><li>Comprovante de endereço</li><li>Certidão de estado civil</li><li>Documentos do espólio, se houver</li></ul>
+        </li>
+        <li class="passo" data-base="Código Civil, art. 288 · Res. CNJ 303/2019, art. 42, § 5º">
+          <span class="passo-tag">Etapa 05</span>
+          <h3>Escritura pública e pagamento</h3>
+          <p>A cessão é assinada em Tabelionato de Notas, por escritura pública — instrumento com fé pública, oponível a terceiros e aceito pelos tribunais que exigem forma pública para registrar a cessão. O pagamento é feito no ato, por transferência bancária identificada.</p>
+        </li>
+        <li class="passo" data-base="CF, art. 100, § 14 · Código Civil, art. 290 · Res. CNJ 303/2019, arts. 44 e 45">
+          <span class="passo-tag">Etapa 06</span>
+          <h3>Comunicação ao tribunal e ao devedor</h3>
+          <p>Protocolamos a petição que comunica a cessão ao tribunal de origem e ao ente devedor. É a partir dessa comunicação que a cessão produz efeitos — a Constituição exige esse passo.</p>
+        </li>
+        <li class="passo" data-base="Res. CNJ 303/2019, art. 45, § 1º">
+          <span class="passo-tag">Etapa 07</span>
+          <h3>Registro concluído</h3>
+          <p>Deferido o registro pela Presidência do Tribunal, a MF Capital passa a constar como cessionária e assume a espera até o pagamento. Para você, o processo terminou na etapa 5.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BASE LEGAL ============ -->
+<section class="secao bege" id="base-legal" data-tema="claro">
+  <div class="holofote" aria-hidden="true"></div>
+  <div class="container">
+    <div class="cabeca-secao">
+      <p class="olho" data-reveal><span class="olho-traco"></span>05 — Segurança jurídica</p>
+      <h2 class="titulo" data-split>O que diz a lei — <em>em linguagem clara</em>.</h2>
+      <p class="lead" data-reveal>A venda de precatórios não é uma brecha: é um negócio previsto na Constituição, regulado pelo Código Civil e pelo Conselho Nacional de Justiça. Estes são os pilares que sustentam cada operação.</p>
+    </div>
+
+    <div class="grade-leis">
+      <article class="lei" data-reveal style="--d:0">
+        <span class="lei-marca">§ 13</span>
+        <div class="lei-corpo">
+          <h3>Você pode vender sem pedir licença ao devedor</h3>
+          <p>O credor pode ceder o precatório, total ou parcialmente, independentemente da concordância do ente público.</p>
+          <p class="lei-ref">Constituição Federal, art. 100, § 13</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:1">
+        <span class="lei-marca">§ 14</span>
+        <div class="lei-corpo">
+          <h3>A cessão vale após a comunicação</h3>
+          <p>A cessão só produz efeitos depois de comunicada, por petição protocolizada, ao tribunal de origem e ao ente devedor.</p>
+          <p class="lei-ref">Constituição Federal, art. 100, § 14</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:0">
+        <span class="lei-marca">Tema 361</span>
+        <div class="lei-corpo">
+          <h3>A natureza alimentar não se perde</h3>
+          <p>“A cessão de crédito alimentício não implica a alteração da natureza.” O crédito mantém a preferência e a posição original na fila.</p>
+          <p class="lei-ref">STF, Tema 361 · Res. CNJ 303/2019, art. 42, § 1º</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:1">
+        <span class="lei-marca">§ 2º</span>
+        <div class="lei-corpo">
+          <h3>A superpreferência é pessoal</h3>
+          <p>A prioridade por idade, doença grave ou deficiência não passa ao comprador. Às vezes vale receber essa parcela primeiro e vender só o restante.</p>
+          <p class="lei-ref">CF, art. 100, § 2º · Res. CNJ 303/2019, art. 43</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:0">
+        <span class="lei-marca">Art. 296</span>
+        <div class="lei-corpo">
+          <h3>Você garante o crédito, não o governo</h3>
+          <p>Quem vende responde pela existência do crédito. Salvo cláusula em contrário, não responde pela demora ou pela falta de pagamento do devedor.</p>
+          <p class="lei-ref">Código Civil, arts. 295 e 296</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:1">
+        <span class="lei-marca">Art. 22</span>
+        <div class="lei-corpo">
+          <h3>Os honorários do seu advogado ficam protegidos</h3>
+          <p>Honorários contratuais podem ser destacados e pagos direto ao advogado. A venda alcança apenas o valor que é seu.</p>
+          <p class="lei-ref">Lei 8.906/1994, art. 22, § 4º · Súmula Vinculante 47</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:0">
+        <span class="lei-marca">§ 9º</span>
+        <div class="lei-corpo">
+          <h3>Dívidas e penhoras são verificadas antes</h3>
+          <p>Débitos em dívida ativa e penhoras no rosto dos autos podem reduzir o valor disponível. A análise prévia evita surpresas.</p>
+          <p class="lei-ref">CF, art. 100, § 9º · CPC, art. 860</p>
+        </div>
+      </article>
+      <article class="lei" data-reveal style="--d:1">
+        <span class="lei-marca">EC 136</span>
+        <div class="lei-corpo">
+          <h3>As regras mais recentes</h3>
+          <p>Data-limite de 1º de fevereiro, correção pelo IPCA com juros de 2% ao ano limitados à Selic e tetos anuais para estados e municípios. Em vigor e questionada no STF.</p>
+          <p class="lei-ref">Emenda Constitucional 136/2025 · ADI 7.873</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIMULADOR ============ -->
+<section class="secao suave" id="simulador" data-tema="claro">
+  <div class="container">
+    <div class="cabeca-secao">
+      <p class="olho" data-reveal><span class="olho-traco"></span>06 — Simulador</p>
+      <h2 class="titulo" data-split>Quanto vale o seu precatório <em>hoje</em>?</h2>
+      <p class="lead" data-reveal>Ajuste os dados e veja, na hora, uma faixa estimada do que você poderia receber na venda. É um ponto de partida para conversar, não uma proposta.</p>
+    </div>
+
+    <div class="sim" data-reveal="scale">
+      <form class="sim-form" id="sim-form" onsubmit="return false">
+        <div class="campo-sim">
+          <label for="sim-valor">Valor atualizado do precatório</label>
+          <div class="sim-valor-caixa">
+            <span>R$</span>
+            <input id="sim-valor" inputmode="numeric" autocomplete="off" value="350.000">
+          </div>
+          <input class="faixa-range" id="sim-range" type="range" min="0" max="1000" step="1" aria-label="Ajustar valor do precatório">
+          <div class="range-legenda"><span>R$ 10 mil</span><span>R$ 10 milhões</span></div>
+        </div>
+
+        <fieldset class="campo-sim">
+          <legend>Quem deve</legend>
+          <div class="segmentado" data-nome="ente">
+            <span class="seg-pilula" aria-hidden="true"></span>
+            <label><input type="radio" name="ente" value="uniao" checked><span>União</span></label>
+            <label><input type="radio" name="ente" value="estado"><span>Estado / DF</span></label>
+            <label><input type="radio" name="ente" value="municipio"><span>Município</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="campo-sim">
+          <legend>Natureza do crédito</legend>
+          <div class="segmentado" data-nome="natureza">
+            <span class="seg-pilula" aria-hidden="true"></span>
+            <label><input type="radio" name="natureza" value="alimentar" checked><span>Alimentar</span></label>
+            <label><input type="radio" name="natureza" value="comum"><span>Comum</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="campo-sim">
+          <legend>Previsão de pagamento</legend>
+          <div class="chips">
+            <label><input type="radio" name="prazo" value="1.25" checked><span>Orçamento 2027</span></label>
+            <label><input type="radio" name="prazo" value="2.25"><span>Orçamento 2028</span></label>
+            <label><input type="radio" name="prazo" value="3.5"><span>2029 ou depois</span></label>
+            <label><input type="radio" name="prazo" value="5"><span>Sem previsão</span></label>
+          </div>
+        </fieldset>
+
+        <div class="campo-sim">
+          <label for="sim-hon">Honorários contratuais a destacar <output id="sim-hon-out">20%</output></label>
+          <input class="faixa-range" id="sim-hon" type="range" min="0" max="30" step="1" value="20">
+        </div>
+
+        <label class="alternar">
+          <input type="checkbox" id="sim-pend">
+          <span class="alternar-trilho"><span></span></span>
+          <span>Há penhora, inventário ou outra pendência conhecida</span>
+        </label>
+      </form>
+
+      <div class="sim-resultado" aria-live="polite">
+        <p class="sim-rotulo">Você poderia receber hoje, aproximadamente</p>
+        <p class="sim-valor-final"><span id="sim-min">R$ 0</span><i>a</i><span id="sim-max">R$ 0</span></p>
+
+        <div class="sim-grafico">
+          <svg class="rosca" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="rosca-base" cx="60" cy="60" r="48"/>
+            <circle class="rosca-seg rosca-voce" cx="60" cy="60" r="48" pathLength="100"/>
+            <circle class="rosca-seg rosca-hon" cx="60" cy="60" r="48" pathLength="100"/>
+            <circle class="rosca-seg rosca-desagio" cx="60" cy="60" r="48" pathLength="100"/>
+          </svg>
+          <div class="rosca-centro"><strong id="sim-desagio">0%</strong><span>deságio estimado</span></div>
+          <ul class="legenda">
+            <li><i class="l-voce"></i><span>Você recebe</span><b id="leg-voce">—</b></li>
+            <li><i class="l-hon"></i><span>Honorários do advogado</span><b id="leg-hon">—</b></li>
+            <li><i class="l-desagio"></i><span>Deságio (custo da antecipação)</span><b id="leg-desagio">—</b></li>
+          </ul>
+        </div>
+
+        <div class="sim-compara">
+          <div class="barra-comp"><span>Receber agora</span><div class="barra"><i id="bar-agora"></i></div><b id="comp-agora">—</b></div>
+          <div class="barra-comp"><span id="comp-futuro-rot">Esperar até dez/2027</span><div class="barra"><i id="bar-futuro"></i></div><b id="comp-futuro">—</b></div>
+        </div>
+
+        <p class="sim-aviso">Simulação ilustrativa, sem valor de proposta. O deságio real depende do ente devedor, da posição na fila, da natureza do crédito e do resultado da análise jurídica. A proposta definitiva é sempre feita por escrito.</p>
+        <a class="btn btn-azul" href="#contato" id="sim-cta" data-magnetico><span class="btn-txt">Quero a avaliação oficial</span><svg class="btn-ic"><use href="#i-seta"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVESTIR ============ -->
+<section class="secao branco" id="investir" data-tema="claro">
+  <div class="holofote" aria-hidden="true"></div>
+  <div class="container grade-2 inverte">
+    <!-- Espaço para imagem: imagens/investir.webp (ou .jpg/.png) — proporção 4:5, ~1200×1500 -->
+    <figure class="foto foto-retrato" data-foto="imagens/investir" data-reveal="clip"><div class="foto-moldura" data-parallax="0.06"></div></figure>
+    <div>
+      <p class="olho" data-reveal><span class="olho-traco"></span>07 — Para investidores</p>
+      <h2 class="titulo" data-split>Quer <em>comprar</em> precatórios?</h2>
+      <p class="lead" data-reveal>Precatórios são créditos contra o poder público, já reconhecidos por decisão definitiva. Para quem tem capital e horizonte de prazo, a compra com deságio pode ser uma forma de diversificar.</p>
+      <p data-reveal>Além de aguardar o pagamento, o crédito adquirido pode ser usado — conforme a lei de cada ente — para quitar débitos inscritos em dívida ativa, comprar imóveis públicos ou pagar outorgas de serviços públicos <span class="cita">CF, art. 100, § 11</span>.</p>
+
+      <ul class="lista-ouro" data-reveal>
+        <li><svg><use href="#i-lupa"/></svg><span><strong>Curadoria e análise</strong> de cada crédito antes de qualquer oferta.</span></li>
+        <li><svg><use href="#i-caneta"/></svg><span><strong>Estruturação da escritura</strong> e do registro da cessão no tribunal.</span></li>
+        <li><svg><use href="#i-relogio"/></svg><span><strong>Acompanhamento</strong> do precatório até o pagamento.</span></li>
+      </ul>
+
+      <div class="riscos" data-reveal>
+        <p class="riscos-tit"><svg><use href="#i-alerta"/></svg>Riscos que você precisa conhecer</p>
+        <ul>
+          <li><strong>Prazo:</strong> o pagamento depende do orçamento e, em estados e municípios, dos limites anuais da EC 136/2025.</li>
+          <li><strong>Mudanças nas regras:</strong> emendas constitucionais já alteraram prazos e índices várias vezes.</li>
+          <li><strong>Cálculo:</strong> pode haver discussões sobre valores e atualizações.</li>
+          <li><strong>Liquidez:</strong> não há bolsa; revender depende de encontrar comprador.</li>
+        </ul>
+        <p class="riscos-pe">Precatório não é aplicação financeira coberta pelo FGC, e rentabilidade estimada não é garantia de resultado.</p>
+      </div>
+
+      <a class="btn btn-azul" href="#contato" data-perfil="comprar" data-magnetico><span class="btn-txt">Quero conhecer oportunidades</span><svg class="btn-ic"><use href="#i-seta"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUEM ============ -->
+<section class="secao suave" id="para-quem" data-tema="claro">
+  <div class="container">
+    <div class="cabeca-secao">
+      <p class="olho" data-reveal><span class="olho-traco"></span>08 — Para quem</p>
+      <h2 class="titulo" data-split>Cada credor tem uma história. <em>Cada análise também.</em></h2>
+    </div>
+    <div class="grade-perfis">
+      <!-- Espaço para imagem: imagens/para-quem.webp (ou .jpg/.png) — proporção 4:5, ~1200×1500 -->
+      <figure class="foto foto-perfis" data-foto="imagens/para-quem" data-reveal="clip"><div class="foto-moldura" data-parallax="0.05"></div></figure>
+      <div class="perfis">
+        <article class="perfil" data-reveal style="--d:0">
+          <svg><use href="#i-pessoas"/></svg>
+          <div><h3>Servidores, aposentados e pensionistas</h3><p>Diferenças salariais, revisões de benefício e outras verbas alimentares reconhecidas na Justiça.</p></div>
+        </article>
+        <article class="perfil" data-reveal style="--d:1">
+          <svg><use href="#i-familia"/></svg>
+          <div><h3>Herdeiros</h3><p>Quando o titular falece, o crédito passa a integrar o espólio. A venda é possível com inventário ou autorização judicial — orientamos o caminho.</p></div>
+        </article>
+        <article class="perfil" data-reveal style="--d:2">
+          <svg><use href="#i-predio"/></svg>
+          <div><h3>Empresas e fornecedores</h3><p>Créditos de contratos, desapropriações e devolução de tributos, para recuperar caixa sem esperar a fila.</p></div>
+        </article>
+        <article class="perfil" data-reveal style="--d:3">
+          <svg><use href="#i-maleta"/></svg>
+          <div><h3>Advogados</h3><p>Honorários de sucumbência e contratuais destacados também são créditos autônomos e podem ser negociados.</p><span class="cita">Lei 8.906/1994, art. 23 · SV 47</span></div>
+        </article>
+        <article class="perfil" data-reveal style="--d:4">
+          <svg><use href="#i-grafico"/></svg>
+          <div><h3>Investidores</h3><p>Pessoas e empresas que buscam adquirir créditos judiciais analisados e documentados.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DÚVIDAS ============ -->
+<section class="secao branco" id="duvidas" data-tema="claro">
+  <div class="container estreito">
+    <div class="cabeca-secao centro">
+      <p class="olho" data-reveal><span class="olho-traco"></span>09 — Perguntas frequentes<span class="olho-traco"></span></p>
+      <h2 class="titulo" data-split>Dúvidas, <em>respondidas com base na lei</em>.</h2>
+    </div>
+
+    <div class="faq-ferramentas" data-reveal>
+      <div class="abas" role="tablist" aria-label="Categorias de perguntas">
+        <span class="abas-marca" aria-hidden="true"></span>
+        <button role="tab" aria-selected="true" data-cat="todas">Todas</button>
+        <button role="tab" aria-selected="false" data-cat="venda">Venda</button>
+        <button role="tab" aria-selected="false" data-cat="juridico">Jurídico</button>
+        <button role="tab" aria-selected="false" data-cat="pagamento">Pagamento e impostos</button>
+        <button role="tab" aria-selected="false" data-cat="compra">Compra</button>
+      </div>
+      <label class="faq-busca">
+        <svg><use href="#i-lupa"/></svg>
+        <input type="search" id="faq-busca" placeholder="Buscar uma dúvida" aria-label="Buscar nas perguntas frequentes">
+      </label>
+    </div>
+
+    <div class="faq" id="faq">
+      <div class="faq-item" data-cat="venda">
+        <h3><button class="faq-q" aria-expanded="false"><span>É legal vender um precatório?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Sim. A própria Constituição autoriza: o credor pode ceder seu precatório a terceiros, no todo ou em parte, <strong>sem precisar da concordância do devedor</strong> (CF, art. 100, § 13). A operação é uma cessão de crédito, regulada pelo Código Civil (arts. 286 a 298), e o registro no tribunal segue a Resolução 303/2019 do Conselho Nacional de Justiça (arts. 42 a 45).</p>
+          <p>Não se trata de empréstimo nem de adiantamento: você transfere o direito de receber e recebe o preço combinado. Depois disso, não fica devendo nada.</p>
+          <p class="faq-base">CF, art. 100, § 13 · Código Civil, arts. 286 a 298 · Res. CNJ 303/2019</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="venda juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>Preciso de autorização do governo ou do juiz?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Do governo, não: a Constituição dispensa a concordância do ente devedor. Mas, para valer, a cessão precisa ser <strong>comunicada por petição ao tribunal de origem e ao ente devedor</strong> (CF, art. 100, § 14), e o registro é deferido pela Presidência do Tribunal (Res. CNJ 303/2019, art. 45). Se o precatório ainda não foi expedido, a comunicação é feita ao juízo da execução (art. 44).</p>
+          <p>Essas providências ficam por conta da MF Capital.</p>
+          <p class="faq-base">CF, art. 100, §§ 13 e 14 · Res. CNJ 303/2019, arts. 44 e 45</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="venda">
+        <h3><button class="faq-q" aria-expanded="false"><span>Por que o valor pago é menor que o valor do precatório?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>A diferença, chamada <strong>deságio</strong>, é o preço de antecipar hoje um dinheiro que só chegaria daqui a anos. Ela remunera o tempo de espera, o risco de atrasos e de mudanças nas regras, e os custos da operação.</p>
+          <p>A lógica é reconhecida pela própria Constituição: o ente público pode fazer acordos diretos com o credor com <strong>redução de até 40%</strong> do crédito atualizado (CF, art. 100, § 20), e a EC 136/2025 criou acordos com renúncia de parte do valor para quem não foi pago por causa dos novos limites (art. 100, § 29). O deságio varia conforme o ente devedor, o ano previsto de pagamento, a natureza do crédito e as pendências do processo.</p>
+          <p class="faq-base">CF, art. 100, §§ 20 e 29</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="venda">
+        <h3><button class="faq-q" aria-expanded="false"><span>Posso vender só uma parte do precatório?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Pode. A cessão pode ser total ou parcial (CF, art. 100, § 13). Na cessão parcial, o comprador passa a ser cobeneficiário do precatório e o tribunal expede uma ordem de pagamento para cada um (Res. CNJ 303/2019, art. 45, § 3º).</p>
+          <p>É uma boa saída para quem precisa de parte do dinheiro agora e prefere esperar pelo restante.</p>
+          <p class="faq-base">CF, art. 100, § 13 · Res. CNJ 303/2019, art. 45, § 3º</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="venda pagamento">
+        <h3><button class="faq-q" aria-expanded="false"><span>Quando eu recebo o dinheiro?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Na assinatura da escritura pública de cessão, no cartório, por transferência bancária identificada. Você não precisa esperar o registro no tribunal: essa etapa, posterior, é responsabilidade da MF Capital.</p>
+          <p>O tempo até a escritura depende principalmente da análise do processo e da documentação: quanto mais completos os dados, mais rápido. Inventários e pendências costumam pedir etapas a mais.</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="venda juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>Se o governo atrasar depois da venda, eu tenho que devolver algo?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Não. Pelo Código Civil, quem vende um crédito <strong>não responde pela solvência do devedor</strong>, salvo se isso for expressamente combinado (art. 296). O risco de atraso, de novas regras de pagamento ou de demora na fila passa a ser de quem comprou.</p>
+          <p>O que você garante é que o crédito existe e é seu (art. 295) — e é justamente isso que a análise jurídica confirma antes da assinatura.</p>
+          <p class="faq-base">Código Civil, arts. 295 e 296</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>Tenho mais de 60 anos ou doença grave. Perco a prioridade se vender?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>A superpreferência (CF, art. 100, § 2º) é um direito pessoal do titular e <strong>não passa ao comprador</strong> (art. 100, § 13). Além disso, se o pagamento da parcela superpreferencial já foi deferido e você ceder o precatório inteiro antes de recebê-la, o benefício fica sem efeito (Res. CNJ 303/2019, art. 43).</p>
+          <p>Por isso analisamos o seu caso com cuidado: muitas vezes o melhor caminho é receber primeiro a parcela prioritária — até três vezes o limite da RPV — e vender apenas o saldo.</p>
+          <p class="faq-base">CF, art. 100, §§ 2º e 13 · Res. CNJ 303/2019, art. 43</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>A natureza alimentar do crédito se perde com a venda?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Não. O Supremo Tribunal Federal fixou, com repercussão geral, que “a cessão de crédito alimentício não implica a alteração da natureza” (Tema 361, RE 631.537). O CNJ seguiu a mesma linha: o crédito mantém a preferência dos alimentares e a <strong>posição original na ordem cronológica</strong> (Res. CNJ 303/2019, art. 42, § 1º).</p>
+          <p>Isso é importante para quem compra e, por consequência, melhora a proposta para quem vende.</p>
+          <p class="faq-base">STF, Tema 361 · Res. CNJ 303/2019, art. 42, § 1º</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>Herdeiros podem vender o precatório?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Podem. Com a morte do titular, o crédito integra o espólio. Os herdeiros se habilitam no processo (CPC, arts. 687 a 692) e a venda pode ser feita pelo inventariante com autorização do juiz do inventário (CPC, art. 619, I) ou pelos próprios herdeiros depois da partilha — inclusive em inventário feito em cartório.</p>
+          <p>Cada família tem uma situação; indicamos o caminho mais curto e seguro para a de vocês.</p>
+          <p class="faq-base">CPC, arts. 619, I, e 687 a 692</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>Meu advogado precisa participar?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>É recomendável. Se o seu contrato de honorários foi juntado ao processo, o advogado pode receber a parte dele diretamente (Lei 8.906/1994, art. 22, § 4º), e a cessão só alcança o valor que sobra para você (Res. CNJ 303/2019, art. 42, § 2º).</p>
+          <p>Conversar com o seu advogado deixa tudo transparente e evita qualquer conflito. Se preferir, falamos diretamente com ele.</p>
+          <p class="faq-base">Lei 8.906/1994, art. 22, § 4º · Res. CNJ 303/2019, art. 42, § 2º</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="juridico pagamento">
+        <h3><button class="faq-q" aria-expanded="false"><span>Tenho dívidas com o governo. Isso afeta a venda?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Pode afetar. Débitos inscritos em dívida ativa contra o credor podem ter o valor correspondente depositado à disposição do juízo da cobrança, sem interromper o pagamento do restante (CF, art. 100, § 9º). Por isso o § 14 condiciona a cessão a essa regra.</p>
+          <p>Na análise, verificamos se há débitos e penhoras (CPC, art. 860) e calculamos a proposta sobre o valor realmente disponível.</p>
+          <p class="faq-base">CF, art. 100, §§ 9º e 14 · CPC, art. 860</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="juridico">
+        <h3><button class="faq-q" aria-expanded="false"><span>Sou casado(a). Meu cônjuge precisa assinar?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Depende do regime de bens. Conforme o regime, o crédito pode pertencer ao casal, e a participação do cônjuge na escritura afasta questionamentos futuros sobre a venda. Avaliamos a certidão de casamento e orientamos caso a caso.</p>
+          <p class="faq-base">Código Civil, arts. 1.658 e seguintes (regimes de bens)</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="pagamento">
+        <h3><button class="faq-q" aria-expanded="false"><span>Há imposto de renda na venda?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Depende da natureza do crédito e da sua situação. Pela Resolução CNJ 303/2019, o imposto que incidir sobre a parcela cedida é de responsabilidade de quem vende, e o imposto sobre o valor recebido na cessão deve ser recolhido pelo próprio contribuinte (art. 42, § 4º).</p>
+          <p>Há casos de isenção — por exemplo, proventos de aposentadoria de portadores de doença grave (Lei 7.713/1988, art. 6º, XIV). Mostramos os números com transparência e recomendamos validar com o seu contador.</p>
+          <p class="faq-base">Res. CNJ 303/2019, art. 42, § 4º · Lei 7.713/1988, art. 6º</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="pagamento">
+        <h3><button class="faq-q" aria-expanded="false"><span>Como o valor do precatório é corrigido?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Desde a EC 136/2025, os requisitórios são atualizados pelo <strong>IPCA, com juros simples de 2% ao ano</strong>; se a soma passar da taxa Selic do período, aplica-se a Selic. Nos créditos de natureza tributária, valem os mesmos critérios que a Fazenda usa para cobrar seus tributos.</p>
+          <p>Durante o prazo constitucional de pagamento (de 1º de fevereiro até o fim do ano seguinte) não correm juros de mora — por isso a atualização da proposta considera a data exata do cálculo.</p>
+          <p class="faq-base">EC 113/2021, art. 3º (redação da EC 136/2025)</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="pagamento venda">
+        <h3><button class="faq-q" aria-expanded="false"><span>A simulação do site é uma proposta?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Não. O simulador usa faixas médias para dar uma ideia de ordem de grandeza. A proposta real só é possível depois da análise do processo, porque fatores como a posição na fila, pendências e a situação fiscal do ente devedor mudam bastante o valor.</p>
+          <p>A avaliação é sem compromisso: você recebe a proposta por escrito e decide com calma.</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="compra">
+        <h3><button class="faq-q" aria-expanded="false"><span>Comprar precatório é um investimento seguro?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>É um crédito contra o poder público, já reconhecido por decisão definitiva — o que o diferencia de muitas outras dívidas. Mas não é isento de riscos: o prazo depende de orçamento e de limites anuais, as regras constitucionais mudam, pode haver discussão de cálculo e a revenda depende de encontrar comprador.</p>
+          <p>Precatório não tem cobertura do FGC. A análise jurídica criteriosa reduz os riscos, mas não os elimina — e preferimos que você saiba disso antes de investir.</p>
+        </div></div></div>
+      </div>
+
+      <div class="faq-item" data-cat="compra">
+        <h3><button class="faq-q" aria-expanded="false"><span>Posso usar precatório para pagar tributos ou comprar imóveis públicos?</span><i class="faq-ic"></i></button></h3>
+        <div class="faq-r"><div><div class="faq-r-in">
+          <p>Em muitos casos, sim. A Constituição permite ao credor — inclusive quem adquiriu o crédito de terceiros — oferecer precatórios para quitar débitos inscritos em dívida ativa, comprar imóveis públicos, pagar outorgas de serviços públicos, adquirir participações societárias e outros direitos do mesmo ente (CF, art. 100, § 11).</p>
+          <p>As condições dependem da lei e da regulamentação de cada ente devedor, e analisamos esse uso junto com você.</p>
+          <p class="faq-base">CF, art. 100, § 11</p>
+        </div></div></div>
+      </div>
+
+      <p class="faq-vazio" hidden>Nenhuma pergunta encontrada. Escreva para nós — respondemos a sua dúvida diretamente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="secao suave contato" id="contato" data-tema="claro">
+  <div class="container grade-contato">
+    <div class="contato-cartao" data-tema-local="escuro">
+      <div class="holofote" aria-hidden="true"></div>
+      <div class="contato-texto">
+      <p class="olho" data-reveal><span class="olho-traco"></span>10 — Fale com a MF Capital</p>
+      <h2 class="titulo" data-split>Solicite uma <em>avaliação</em> do seu precatório.</h2>
+      <p class="lead" data-reveal>Conte o básico sobre o seu crédito. Analisamos o processo e retornamos com uma proposta por escrito, sem compromisso.</p>
+
+      <div class="email-cartao" data-reveal>
+        <div class="email-topo">
+          <span class="email-logo"><svg viewBox="0 0 88 66" aria-hidden="true"><use href="#i-gmail"/></svg></span>
+          <div class="email-dados">
+            <small>E-mail oficial</small>
+            <a href="mailto:mf.negociosecapital@gmail.com" class="email-link">mf.negociosecapital@<wbr>gmail.com</a>
+          </div>
+        </div>
+        <div class="email-acoes">
+          <a class="email-acao principal" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mf.negociosecapital@gmail.com&amp;su=Solicita%C3%A7%C3%A3o%20de%20avalia%C3%A7%C3%A3o%20de%20precat%C3%B3rio" target="_blank" rel="noopener"><svg class="ic-gmail" viewBox="0 0 88 66" aria-hidden="true"><use href="#i-gmail"/></svg>Escrever pelo Gmail<svg class="ic-seta"><use href="#i-seta"/></svg></a>
+          <a class="email-acao" href="mailto:mf.negociosecapital@gmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20avalia%C3%A7%C3%A3o%20de%20precat%C3%B3rio"><svg><use href="#i-email"/></svg>App de e-mail</a>
+          <button class="email-acao" type="button" data-copiar="mf.negociosecapital@gmail.com"><svg class="ic-copiar"><use href="#i-copiar"/></svg><svg class="ic-feito"><use href="#i-check"/></svg><span>Copiar</span></button>
+        </div>
+      </div>
+
+      <ul class="garantias" data-reveal>
+        <li><svg><use href="#i-check"/></svg>Avaliação sem compromisso</li>
+        <li><svg><use href="#i-check"/></svg>Dados tratados com sigilo (LGPD)</li>
+        <li><svg><use href="#i-check"/></svg>Proposta sempre por escrito</li>
+      </ul>
+      </div>
+    </div>
+
+    <div class="form-caixa" data-reveal="scale">
+      <form class="form" id="form-avaliacao" novalidate>
+        <fieldset class="form-perfil">
+          <legend>Eu quero</legend>
+          <div class="segmentado" data-nome="perfil">
+            <span class="seg-pilula" aria-hidden="true"></span>
+            <label><input type="radio" name="perfil" value="vender" checked><span>Vender</span></label>
+            <label><input type="radio" name="perfil" value="comprar"><span>Comprar</span></label>
+            <label><input type="radio" name="perfil" value="advogado"><span>Sou advogado(a)</span></label>
+          </div>
+        </fieldset>
+
+        <div class="form-grade">
+          <div class="campo">
+            <div class="campo-in">
+            <input id="f-nome" name="nome" type="text" placeholder=" " autocomplete="name" required>
+            <label for="f-nome">Nome completo</label><span class="campo-linha"></span>
+            </div>
+            <small class="campo-erro">Informe o seu nome.</small>
+          </div>
+          <div class="campo">
+            <div class="campo-in">
+            <input id="f-email" name="email" type="email" placeholder=" " autocomplete="email" required>
+            <label for="f-email">E-mail</label><span class="campo-linha"></span>
+            </div>
+            <small class="campo-erro">Informe um e-mail válido.</small>
+          </div>
+          <div class="campo">
+            <div class="campo-in">
+            <input id="f-tel" name="telefone" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" required>
+            <label for="f-tel">Telefone / WhatsApp</label><span class="campo-linha"></span>
+            </div>
+            <small class="campo-erro">Informe um telefone com DDD.</small>
+          </div>
+          <div class="campo">
+            <div class="campo-in">
+            <select id="f-ente" name="ente">
+              <option value="">Selecione</option>
+              <option value="União (federal)">União (federal)</option>
+              <option value="Estado / DF">Estado / DF</option>
+              <option value="Município">Município</option>
+              <option value="Não sei">Não sei</option>
+            </select>
+            <label for="f-ente" class="label-fixo">Ente devedor</label><span class="campo-linha"></span>
+            </div>
+          </div>
+          <div class="campo">
+            <div class="campo-in">
+            <input id="f-processo" name="processo" type="text" placeholder=" " autocomplete="off">
+            <label for="f-processo">Nº do processo (opcional)</label><span class="campo-linha"></span>
+            </div>
+          </div>
+          <div class="campo">
+            <div class="campo-in">
+            <input id="f-valor" name="valor" type="text" placeholder=" " inputmode="numeric" autocomplete="off">
+            <label for="f-valor">Valor aproximado (R$)</label><span class="campo-linha"></span>
+            </div>
+          </div>
+          <div class="campo campo-largo">
+            <div class="campo-in">
+            <textarea id="f-msg" name="mensagem" rows="3" placeholder=" "></textarea>
+            <label for="f-msg">Mensagem (opcional)</label><span class="campo-linha"></span>
+            </div>
+          </div>
+        </div>
+
+        <label class="aceite">
+          <input type="checkbox" id="f-lgpd" required>
+          <span class="aceite-caixa"><svg><use href="#i-check"/></svg></span>
+          <span>Autorizo a MF Capital a usar estes dados para responder a esta solicitação, nos termos da Lei Geral de Proteção de Dados (Lei 13.709/2018).</span>
+        </label>
+        <small class="campo-erro aceite-erro">É preciso autorizar o contato para continuar.</small>
+
+        <button class="btn btn-azul btn-enviar" type="submit" data-magnetico>
+          <span class="btn-txt">Solicitar avaliação</span>
+          <span class="btn-carregando" aria-hidden="true"></span>
+          <svg class="btn-ic"><use href="#i-envio"/></svg>
+        </button>
+      </form>
+
+      <div class="sucesso" id="sucesso" hidden tabindex="-1">
+        <div class="sucesso-burst" aria-hidden="true"></div>
+        <svg class="sucesso-check" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 21-23"/></svg>
+        <h3>Solicitação pronta!</h3>
+        <p>Falta só um passo: envie a mensagem que preparamos para <strong>mf.negociosecapital@<wbr>gmail.com</strong>. Escolha como prefere enviar:</p>
+        <div class="sucesso-acoes">
+          <a class="btn btn-azul" id="enviar-gmail" href="#" target="_blank" rel="noopener"><span class="btn-logo"><svg viewBox="0 0 88 66" aria-hidden="true"><use href="#i-gmail"/></svg></span><span class="btn-txt">Enviar pelo Gmail</span><svg class="btn-ic"><use href="#i-seta"/></svg></a>
+          <a class="btn btn-contorno" id="enviar-app" href="#"><span class="btn-txt">Abrir meu app de e-mail</span></a>
+        </div>
+        <button class="sucesso-copiar" type="button" id="copiar-msg"><svg><use href="#i-copiar"/></svg>Copiar a mensagem</button>
+        <button class="sucesso-voltar" type="button" id="nova-solicitacao">Editar os dados</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="rodape" data-tema="escuro">
+  <div class="container rodape-grade">
+    <div class="rodape-marca">
+      <img src="imagens/logo-mf-capital-claro.png" alt="MF Capital — compra e venda de precatórios" width="1062" height="224" loading="lazy">
+      <p>Compra e venda de precatórios com análise jurídica, escritura pública e transparência do início ao fim.</p>
+    </div>
+    <nav class="rodape-nav" aria-label="Rodapé">
+      <a href="#entenda">O que é precatório</a>
+      <a href="#passo-a-passo">Passo a passo</a>
+      <a href="#base-legal">Base legal</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#investir">Para investidores</a>
+      <a href="#duvidas">Perguntas frequentes</a>
+    </nav>
+    <div class="rodape-contato">
+      <small>Fale com a gente</small>
+      <a class="rodape-email" href="mailto:mf.negociosecapital@gmail.com"><span><svg viewBox="0 0 88 66" aria-hidden="true"><use href="#i-gmail"/></svg></span>mf.negociosecapital@gmail.com</a>
+      <a class="btn btn-ouro btn-p" href="#contato"><span class="btn-txt">Solicitar avaliação</span><svg class="btn-ic"><use href="#i-seta"/></svg></a>
+    </div>
+  </div>
+  <div class="container rodape-legal">
+    <p>As informações deste site têm caráter informativo e refletem a legislação vigente em setembro de 2026, incluindo a EC 136/2025. Não substituem a análise do caso concreto. Simulações são ilustrativas e não constituem proposta.</p>
+    <p>© 2026 MF Capital. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="barra-movel">
+  <a href="#simulador">Simular</a>
+  <a href="#contato" class="destaque">Solicitar avaliação</a>
+</div>
+
+<button class="voltar-topo" type="button" aria-label="Voltar ao topo">
+  <svg class="voltar-anel" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><circle class="voltar-progresso" cx="24" cy="24" r="22" pathLength="100"/></svg>
+  <svg class="voltar-ic"><use href="#i-seta-cima"/></svg>
+</button>
+
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/site.js?v=5" defer></script>
+</body>
+</html>
