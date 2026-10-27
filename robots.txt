@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jvalvim-bit.github.io/MF-Capitall/sitemap.xml
+Sitemap: https://mfcapital.net.br/sitemap.xml
